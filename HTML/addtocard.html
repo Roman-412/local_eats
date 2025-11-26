@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Checkout</title>
+    <link rel="stylesheet" href="/CSS/addtocard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+
+    <div class="checkout-container">
+        <header class="checkout-header">
+            <h1>Checkout</h1>
+        </header>
+
+        <section class="delivery-type-section">
+            <h2>Delivery Type</h2>
+            <label class="radio-button-card">
+                <input type="radio" name="deliveryType" value="home">
+                <div class="card-content">
+                    <span class="type-name">Home Delivery</span>
+                    <span class="charge-details">Charge: + ₹ <span id="delivery-charge">30</span></span>
+                </div>
+            </label>
+        </section>
+
+        <hr>
+
+        <section class="address-section">
+            <div class="address-header">
+                <h2>Deliver To</h2>
+                <a href="#" class="add-new">+ Add New</a>
+            </div>
+
+            <div class="selected-address-card">
+                <span class="address-tag">Others</span>
+                <span class="address-text">72-36, Md.Sahib Nagar, Sandapet, T.Keeranur, ...</span>
+                <span class="dropdown-arrow">v</span>
+            </div>
+
+            <input type="text" placeholder="Street Number">
+            <div class="inline-fields">
+                <input type="text" placeholder="House">
+                <input type="text" placeholder="Floor">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="instructions-tip-section">
+            <div class="section-header">
+                <h2>Add More Delivery Instruction</h2>
+                <span>+</span>
+            </div>
+            <div class="tip-section">
+                <h3>Tip for Delivery Partner (Optional)</h3>
+                <div class="tip-options">
+                    <button class="tip-btn" data-tip="10" onclick="setTip(this)">₹10</button>
+                    <button class="tip-btn" data-tip="20" onclick="setTip(this)">₹20</button>
+                    <button class="tip-btn" data-tip="50" onclick="setTip(this)">₹50</button>
+                    <input type="number" id="custom-tip" placeholder="Custom Tip" oninput="setCustomTip(this)">
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="promo-section">
+            <div class="promo-header">
+                <h2>Promo Code</h2>
+                <a href="#">Add Voucher +</a>
+            </div>
+            <div class="promo-input-group">
+                <input type="text" id="promo-input" placeholder="Enter Promo Code">
+                <button class="apply-btn">Apply</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="price-details-section">
+            <h2>Price Details</h2>
+            <div class="price-item">
+                <span>Subtotal</span>
+                <span>₹ <span id="subtotal">106</span></span>
+            </div>
+            <div class="price-item">
+                <span>Delivery Charges</span>
+                <span class="green-text">+ ₹ <span id="charge-value">30</span></span>
+            </div>
+            <div class="price-item tip-display">
+                <span>Partner Tip</span>
+                <span class="green-text">+ ₹ <span id="tip-value">0</span></span>
+            </div>
+            <div class="total-amount-line">
+                <span class="vat-tax-note">(Vat/Tax Incl.)</span>
+                <span class="total-text">Total Amount</span>
+                <span class="final-total">₹ <span id="final-total">136</span></span>
+            </div>
+        </section>
+
+        <a href="/HTML/pay_details.html"><button class="place-order-btn">Place Order</button></a>
+
+    </div>
+
+    <script src="/CSS/js/addtocard.js"></script>
+</body>
+
+</html>

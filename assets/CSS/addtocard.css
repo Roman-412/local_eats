@@ -1,0 +1,409 @@
+body{
+    background-color:#0D121C;
+    color: white;
+}
+
+.content-area {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner-placeholder {
+    height: 20px; 
+    width: 100%;
+    margin: 20px 0 40px 0;
+    font-size: x-large;
+    margin-right: 200px;
+}
+
+
+.controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.checkout-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgb(24, 27, 51);
+    padding: 20px;
+}
+
+/* --- Header --- */
+.checkout-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* --- Separator --- */
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+/* --- Delivery Type Card --- */
+.delivery-type-section h2, .address-section h2, .promo-section h2, .price-details-section h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.radio-button-card {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Hide the actual radio button */
+.radio-button-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+
+
+.radio-button-card input[type="radio"]:checked + .card-content .type-name::before {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff6600;
+    border: 3px solid white;
+    box-shadow: 0 0 0 1px #ff6600;
+    margin-right: 8px;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.type-name {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.type-name::before {
+    /* Unselected radio circle */
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    margin-right: 8px;
+}
+
+.charge-details {
+    color: white;
+    font-size: 14px;
+}
+
+/* --- Address Section --- */
+.address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-new {
+    color: #ff6600;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.selected-address-card {
+    background-color: #fffaf5;
+    border: 1px solid #ffe8d4;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.address-tag {
+    background-color: #ff6600;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.address-text {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown-arrow {
+    font-size: 14px;
+    color: #ff6600;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inline-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.inline-fields input {
+    width: calc(50% - 5px); /* Adjusted for the gap */
+    margin-bottom: 0;
+}
+
+/* --- Instructions & Tip --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tip-section h3 {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.tip-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tip-btn {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.tip-btn.selected {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: white;
+}
+
+#custom-tip {
+    width: 100px;
+    text-align: center;
+    margin: 0;
+}
+
+/* --- Promo Section --- */
+.promo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.promo-header a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.promo-input-group {
+    display: flex;
+}
+
+#promo-input {
+    flex-grow: 1;
+    margin-bottom: 0;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.apply-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- Price Details --- */
+.price-details-section {
+    padding-top: 10px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color:white;
+}
+
+.green-text {
+    color: green;
+    font-weight: bold;
+}
+
+.total-amount-line {
+    display: grid;
+    grid-template-areas: "note total total-amount";
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.vat-tax-note {
+    font-size: 12px;
+    color: white;
+}
+
+.total-text {
+    grid-area: total;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.final-total {
+    grid-area: total-amount;
+    font-weight: bold;
+    font-size: 20px;
+    color:white;
+}
+
+/* --- Place Order Button --- */
+.place-order-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    
+}
+/* --- Mobile Responsiveness (Max Width 600px) --- */
+@media (max-width: 600px) {
+
+    /* General Layout Adjustments */
+    .content-area {
+        padding: 10px; /* Reduce horizontal padding */
+    }
+
+    .checkout-container {
+        max-width: 100%; /* Use full available width */
+        padding: 15px; /* Slight reduction in container padding */
+        margin: 0; /* Remove auto margins to stretch to edges */
+    }
+    
+    /* Input Fields */
+    .inline-fields {
+        flex-direction: column; /* Stack inline fields vertically */
+        gap: 0; /* Remove gap when stacking */
+    }
+
+    .inline-fields input {
+        width: 100%; /* Make stacked inputs full width */
+        margin-bottom: 10px; /* Add back vertical margin */
+    }
+    
+    /* Radio Button Card */
+    .radio-button-card {
+        padding: 12px;
+    }
+    
+    /* Tip Section */
+    .tip-options {
+        flex-wrap: wrap; /* Allow tip buttons to wrap if space is tight */
+        gap: 8px;
+    }
+    
+    /* Promo Input */
+    .promo-input-group {
+        width: 100%;
+    }
+    
+    /* Price Details */
+    .price-details-section {
+        padding-bottom: 80px; /* Add extra padding to the bottom so the content is visible above the fixed 'Place Order' button */
+    }
+    
+    .total-amount-line {
+        /* Use a standard flex layout on small screens for better predictability */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+    
+    .vat-tax-note {
+        /* Move VAT/Tax note to its own line or adjust its positioning if needed */
+        order: 1; /* Keep it first or adjust order if needed */
+    }
+    
+    .total-text {
+        font-size: 16px;
+        margin-right: 10px;
+        order: 2;
+    }
+    
+    .final-total {
+        font-size: 18px;
+        order: 3;
+    }
+    
+    /* Place Order Button (Fixed at bottom for easy access) */
+    .place-order-btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+        margin: 0;
+        padding: 20px 15px; /* Increase padding for better tap target */
+        z-index: 900; /* Ensure button stays on top */
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+}

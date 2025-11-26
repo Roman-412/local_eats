@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Eats payment</title>
+  <link rel="stylesheet" href="/CSS/pay_details.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+  </header>
+  <div class="container">
+    <div class="panel left fade-in">
+      <header class="checkout-head">
+        <div class="brand">Local Eats</div>
+        <div>
+          <h1>Pay for your order</h1>
+          <p class="lead">Secure checkout — choose a payment method to complete your order.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <h3>Customer</h3>
+        <div class="row">
+          <div class="col">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Full name" required />
+          </div>
+          <div class="col">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Payment Method</h3>
+        <div class="methods">
+          <div class="method selected" data-method="upi">UPI</div>
+          <div class="method" data-method="card">Card</div>
+          <div class="method" data-method="netbanking">Netbanking</div>
+          <div class="method" data-method="cod">Cash on Delivery</div>
+        </div>
+
+        <div id="card-form" class="hidden">
+          <label>Card Number</label>
+          <input type="text" id="card-number" placeholder="4242 4242 4242 4242" maxlength="19" />
+          <div class="row">
+            <div class="col">
+              <label>Expiry</label>
+              <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" />
+            </div>
+            <div class="col">
+              <label>CVV</label>
+              <input type="text" id="cvv" maxlength="4" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <button id="pay" class="pay-btn">Pay ₹299</button>
+    </div>
+
+    <aside class="panel right fade-in">
+      <h3>Order Summary</h3>
+      <p>Veg Thali — ₹249</p>
+      <p>Delivery Fee — ₹50</p>
+      <hr />
+      <strong>Total — ₹299</strong>
+    </aside>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-card">
+      <h3>Pay with UPI</h3>
+      <p>Scan the QR code or open your UPI app</p>
+      <div class="qr">QR</div>
+      <button id="open-upi" class="pay-btn">Open UPI App</button>
+      <button id="close-upi" class="close-btn">Close</button>
+    </div>
+  </div>
+
+  <script src="/CSS/js/pay_details.js"></script>
+</body>
+
+
+</html>

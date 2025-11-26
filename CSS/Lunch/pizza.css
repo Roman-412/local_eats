@@ -1,0 +1,448 @@
+:root {
+    --primary-color: #4CAF50; /* A green for "Local Eats" brand */
+    --accent-color: #5d5cff; /* A purple/blue for the buttons */
+    --background-light: #f6f6ff; /* Light purple/lavender background for cards */
+    --text-dark: #333;
+    --text-light: #666;
+    --price-old: #999;
+    --border-color: #ddd;
+    --primary-orange: #FF5722;
+    --text-light: #f5f5f5; 
+    --surface-dark: #1a1a1a; 
+    --border-dark: #333;
+
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--surface-dark);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+    gap: 10px;
+}
+
+.logo {
+    background-color: var(--primary-orange); 
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+.location-input, .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--border-dark); 
+    padding: 8px 15px;
+    border-radius: 20px; 
+    border: 1px solid var(--border-dark);
+}
+
+.location-input { flex-grow: 0.5; max-width: 300px; }
+.search-bar { flex-grow: 1.5; }
+
+.location-input input, .search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0 10px;
+    flex-grow: 1;
+    color:#f5f5f5; 
+}
+.location-input input::placeholder, .search-bar input::placeholder {
+    color: var(--text-placeholder);
+}
+
+.location-input i {
+    color: var(--primary-orange); /* Orange Icons */
+}
+
+/* Auth Buttons */
+.auth-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #f5f5f5; ;
+    background-color: var( --primary-orange); /* Dark gray for sign up */
+}
+.auth-btn > a,
+.login > a{
+    text-decoration: none;
+    color: white;
+}
+
+.login{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #f5f5f5; ;
+    background-color: var( --primary-orange); /* Dark gray for sign up */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #010101; /* Main white background */
+}
+
+.product-page-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.product-info-block {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.product-image-area {
+    flex: 1;
+    max-width: 50%;
+}
+
+.product-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.product-details-area {
+    flex: 1;
+    max-width: 50%;
+    padding-top: 10px;
+}
+
+/* Restaurant Header */
+.restaurant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.by-restaurant {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.rating-badge i {
+    font-size: 0.8em;
+}
+
+.share-icon {
+    cursor: pointer;
+}
+
+/* Product Details */
+.product-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color:white;
+    margin: 0 0 10px 0;
+}
+
+.product-badges {
+    margin-bottom: 15px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color: var(--text-dark);
+    margin-right: 5px;
+}
+
+.product-description {
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Price and Action Row */
+.price-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.pricing {
+    display: flex;
+    align-items: center;
+}
+
+.current-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-right: 10px;
+}
+
+.old-price {
+    font-size: 1em;
+    color: var(--price-old);
+    text-decoration: line-through;
+}
+
+.add-to-cart-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #4a49cc;
+}
+
+/* --- NUTRITIONAL SECTION --- */
+.nutritional-section {
+    margin-top: 40px;
+}
+
+.nutritional-section h2 {
+    font-size: 1.5em;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.nutritional-note {
+    font-size: 0.9em;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.nutrition-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nutrition-card {
+    flex: 1 1 200px; /* Allows up to 4 per row on wide screens */
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.nutrition-card .value {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.nutrition-card .label {
+    display: block;
+    font-size: 1em;
+    color: var(--text-light);
+}
+
+.extra-nutrition {
+    /* To handle the 'Sugar' card being on a new line */
+    flex-basis: 200px; 
+}
+
+.item-count {
+    font-size: 0.9em;
+    color: var(--text-light);
+    margin-right: 10px; /* Space between count and button */
+}
+
+.view-cart-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.view-cart-button i {
+    margin-right: 5px;
+}
+.main-footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 30px;
+}
+
+
+.footer-block {
+    flex-grow: 1;
+    flex-basis: 0; 
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title {
+    font-size: 1.2em;
+    font-weight: 700; 
+    margin-bottom: 15px;
+    color: var(--text-light);
+    text-align: center;
+}
+.footer-title.logo {
+    font-size: 1.5em;
+    color:var(--text-light); 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+
+.footer-link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.footer-link-list a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s;
+    text-align: center;
+}
+
+.footer-link-list a:hover {
+    color: var(--primary-orange);
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px; 
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 1.2em; 
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-orange);
+}
+
+
+
+.footer-copyright {
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+.footer-link-list a:hover {
+    color: var(--primary-orange, #ff6600); 
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-orange, #ff6600);
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Media Query for Mobile responsiveness */
+@media (max-width: 768px) {
+    .product-info-block {
+        flex-direction: column;
+    }
+
+    .product-image-area,
+    .product-details-area {
+        max-width: 100%;
+    }
+    
+    .price-action-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .add-to-cart-button {
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .bottom-cart-bar {
+        justify-content: space-between;
+    }
+}
