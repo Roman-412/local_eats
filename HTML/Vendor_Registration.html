@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Eats | Vendor Registration</title>
+    <link rel="stylesheet" href="../CSS/Vendor_Registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="registration-container">
+            <div class="header">
+                <button
+                    onclick="window.history.back()"
+                    class="back-btn"
+                    aria-label="Go back to previous page"
+                >
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
+                </button>
+                <h1>Vendor Registration</h1>
+            </div>
+            
+            <form>
+                <div class="form-group">
+                    <label for="cart-name">Cart Name:</label>
+                    <input type="text" id="cart-name" placeholder="Enter your Cart Name (e.g., Raju's Vada Pav)" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="food-type">Food Type:</label>
+                    <select id="food-type">
+                        <option value="">Select food type</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="non-vegetarian">Non-Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="mixed">Mixed</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vendor-name">Vendor Name:</label>
+                    <input type="text" id="vendor-name" placeholder="Owner's Full Name" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="tel" id="phone-number" placeholder="Enter Your Contact Number" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <div class="location-group">
+                        <i class="fas fa-map-marker-alt location-icon"></i>
+                        <input type="text" id="location" placeholder="Full Address of the Stall" required />
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cart-image">Image (Upload Cart Photo)</label>
+                    <input type="file" id="cart-image" class="image-upload" accept="image/*" required />
+                </div>
+                
+                <div class="form-group">
+                    <label for="menu-list">Menu List (List items and prices)</label>
+                    <textarea id="menu-list" class="menu-list" placeholder="e.g., Vada Pav - ₹20, Samosa - ₹15, Chai - ₹10"></textarea>
+                </div>
+                
+                <div class="operating-hours">
+                    <h3>Operating Hours:</h3>
+                    <div class="time-inputs">
+                        <div class="time-group">
+                            <label for="open-time">Opening Time</label>
+                            <input type="time" id="open-time" required />
+                        </div>
+                        <div class="time-group">
+                            <label for="close-time">Closing Time</label>
+                            <input type="time" id="close-time" required />
+                        </div>
+                    </div>
+                </div>
+                
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    aria-label="Submit Registration"
+                >
+                    Submit Registration
+                </button>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
