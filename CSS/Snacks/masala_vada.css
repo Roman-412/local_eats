@@ -1,14 +1,17 @@
 :root {
-    --primary-color: #4CAF50; /* A green for "Local Eats" brand */
-    --accent-color: #5d5cff; /* A purple/blue for the buttons */
-    --background-light: #f6f6ff; /* Light purple/lavender background for cards */
+    --primary-color: #4CAF50;
+    /* A green for "Local Eats" brand */
+    --accent-color: #5d5cff;
+    /* A purple/blue for the buttons */
+    --background-light: #f6f6ff;
+    /* Light purple/lavender background for cards */
     --text-dark: #333;
     --text-light: #666;
     --price-old: #999;
     --border-color: #ddd;
     --primary-orange: #FF5722;
-    --text-light: #f5f5f5; 
-    --surface-dark: #1a1a1a; 
+    --text-light: #f5f5f5;
+    --surface-dark: #1a1a1a;
     --border-dark: #333;
 
 }
@@ -20,12 +23,12 @@
     align-items: center;
     padding: 10px 20px;
     background-color: var(--surface-dark);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     gap: 10px;
 }
 
 .logo {
-    background-color: var(--primary-orange); 
+    background-color: var(--primary-orange);
     color: var(--text-light);
     padding: 10px 20px;
     border-radius: 50%;
@@ -33,32 +36,43 @@
 }
 
 
-.location-input, .search-bar {
+.location-input,
+.search-bar {
     display: flex;
     align-items: center;
-    background-color: var(--border-dark); 
+    background-color: var(--border-dark);
     padding: 8px 15px;
-    border-radius: 20px; 
+    border-radius: 20px;
     border: 1px solid var(--border-dark);
 }
 
-.location-input { flex-grow: 0.5; max-width: 300px; }
-.search-bar { flex-grow: 1.5; }
+.location-input {
+    flex-grow: 0.5;
+    max-width: 300px;
+}
 
-.location-input input, .search-bar input {
+.search-bar {
+    flex-grow: 1.5;
+}
+
+.location-input input,
+.search-bar input {
     border: none;
     background: none;
     outline: none;
     padding: 0 10px;
     flex-grow: 1;
-    color:#f5f5f5; 
+    color: #f5f5f5;
 }
-.location-input input::placeholder, .search-bar input::placeholder {
+
+.location-input input::placeholder,
+.search-bar input::placeholder {
     color: var(--text-placeholder);
 }
 
 .location-input i {
-    color: var(--primary-orange); /* Orange Icons */
+    color: var(--primary-orange);
+    /* Orange Icons */
 }
 
 /* Auth Buttons */
@@ -68,29 +82,36 @@
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    color: #f5f5f5; ;
-    background-color: var( --primary-orange); /* Dark gray for sign up */
+    color: #f5f5f5;
+    ;
+    background-color: var(--primary-orange);
+    /* Dark gray for sign up */
 }
-.auth-btn > a,
-.login > a{
+
+.auth-btn>a,
+.login>a {
     text-decoration: none;
     color: white;
 }
 
-.login{
+.login {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    color: #f5f5f5; ;
-    background-color: var( --primary-orange); /* Dark gray for sign up */
+    color: #f5f5f5;
+    ;
+    background-color: var(--primary-orange);
+    /* Dark gray for sign up */
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #010101; /* Main white background */
+    background-color: #010101;
+    /* Main white background */
 }
 
 .product-page-container {
@@ -98,6 +119,7 @@ body {
     margin: 20px auto;
     padding: 0 20px;
 }
+
 .product-info-block {
     display: flex;
     gap: 30px;
@@ -158,7 +180,8 @@ body {
 .product-title {
     font-size: 1.8em;
     font-weight: bold;
-    color: var(--text-dark);
+    color: var(--text-light);
+    /* Changed to light */
     margin: 0 0 10px 0;
 }
 
@@ -169,21 +192,24 @@ body {
 .badge {
     display: inline-block;
     padding: 3px 8px;
-    background-color: #f0f0f0;
+    background-color: #333;
+    /* Darker badge bg */
     border-radius: 4px;
     font-size: 0.8em;
-    color: var(--text-dark);
+    color: var(--text-light);
+    /* Light text */
     margin-right: 5px;
 }
 
 .product-description {
-    color: var(--text-light);
+    color: #ccc;
+    /* Lighter grey */
     line-height: 1.5;
     margin-bottom: 20px;
 }
 
 .read-more {
-    color: var(--accent-color);
+    color: var(--primary-orange);
     cursor: pointer;
     font-weight: bold;
 }
@@ -193,7 +219,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-dark);
     padding-top: 20px;
 }
 
@@ -205,18 +231,19 @@ body {
 .current-price {
     font-size: 1.5em;
     font-weight: bold;
-    color: var(--text-dark);
+    color: var(--text-light);
+    /* Light text */
     margin-right: 10px;
 }
 
 .old-price {
     font-size: 1em;
-    color: var(--price-old);
+    color: #666;
     text-decoration: line-through;
 }
 
 .add-to-cart-button {
-    background-color: var(--accent-color);
+    background-color: var(--primary-orange);
     color: white;
     border: none;
     padding: 10px 30px;
@@ -228,7 +255,7 @@ body {
 }
 
 .add-to-cart-button:hover {
-    background-color: #4a49cc;
+    background-color: #e64a19;
 }
 
 /* --- NUTRITIONAL SECTION --- */
@@ -238,13 +265,14 @@ body {
 
 .nutritional-section h2 {
     font-size: 1.5em;
-    color: var(--text-dark);
+    color: var(--text-light);
+    /* Changed to light */
     margin-bottom: 5px;
 }
 
 .nutritional-note {
     font-size: 0.9em;
-    color: var(--text-light);
+    color: #aaa;
     margin-bottom: 20px;
 }
 
@@ -255,18 +283,22 @@ body {
 }
 
 .nutrition-card {
-    flex: 1 1 200px; /* Allows up to 4 per row on wide screens */
-    background-color: var(--background-light);
+    flex: 1 1 200px;
+    /* Allows up to 4 per row on wide screens */
+    background-color: var(--surface-dark);
+    /* Dark surface */
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    border: 1px solid var(--border-dark);
 }
 
 .nutrition-card .value {
     display: block;
     font-size: 2em;
     font-weight: bold;
-    color: var(--text-dark);
+    color: var(--primary-orange);
+    /* Highlight color */
     margin-bottom: 5px;
 }
 
@@ -278,13 +310,14 @@ body {
 
 .extra-nutrition {
     /* To handle the 'Sugar' card being on a new line */
-    flex-basis: 200px; 
+    flex-basis: 200px;
 }
 
 .item-count {
     font-size: 0.9em;
     color: var(--text-light);
-    margin-right: 10px; /* Space between count and button */
+    margin-right: 10px;
+    /* Space between count and button */
 }
 
 .view-cart-button {
@@ -302,6 +335,7 @@ body {
 .view-cart-button i {
     margin-right: 5px;
 }
+
 .main-footer {
     background-color: var(--background-dark);
     color: var(--text-light);
@@ -313,7 +347,7 @@ body {
 .footer-content-wrapper {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -323,7 +357,7 @@ body {
 
 .footer-block {
     flex-grow: 1;
-    flex-basis: 0; 
+    flex-basis: 0;
     min-width: 150px;
     display: flex;
     flex-direction: column;
@@ -332,14 +366,15 @@ body {
 
 .footer-title {
     font-size: 1.2em;
-    font-weight: 700; 
+    font-weight: 700;
     margin-bottom: 15px;
     color: var(--text-light);
     text-align: center;
 }
+
 .footer-title.logo {
     font-size: 1.5em;
-    color:var(--text-light); 
+    color: var(--text-light);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -369,12 +404,12 @@ body {
 .social-icons {
     margin-top: 10px;
     display: flex;
-    gap: 15px; 
+    gap: 15px;
 }
 
 .social-icons a {
     color: var(--text-light);
-    font-size: 1.2em; 
+    font-size: 1.2em;
     transition: color 0.2s;
 }
 
@@ -389,11 +424,11 @@ body {
     margin: 20px auto 0 auto;
     text-align: center;
     font-size: 0.8em;
-    color: rgba(255, 255, 255, 0.5); 
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-link-list a:hover {
-    color: var(--primary-orange, #ff6600); 
+    color: var(--primary-orange, #ff6600);
 }
 
 
@@ -431,17 +466,17 @@ body {
     .product-details-area {
         max-width: 100%;
     }
-    
+
     .price-action-row {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .add-to-cart-button {
         width: 100%;
         margin-top: 15px;
     }
-    
+
     .bottom-cart-bar {
         justify-content: space-between;
     }

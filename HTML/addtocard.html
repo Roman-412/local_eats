@@ -1,110 +1,207 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Delivery Checkout</title>
-    <link rel="stylesheet" href="../CSS/addtocard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+﻿<!doctype html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Delivery Checkout</title>
+  <link rel="stylesheet" href="../CSS/addtocard.css" />
+  <link rel="stylesheet" href="../CSS/location-modal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
+<body>
+  <div class="checkout-container">
+    <header class="checkout-header">
+      <a href="../index.html" style="
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          ">
+        <i class="fas fa-arrow-left"></i>
+        <h1>Checkout</h1>
+      </a>
+      <div id="user-info" style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
+        <span id="username-display" style="font-weight: 600; color: #333;"></span>
+        <button onclick="logout()"
+          style="background: #ff5722; color: white; border: none; padding: 5px 12px; border-radius: 6px; cursor: pointer;">Logout</button>
+      </div>
+    </header>
+    <section class="order-summary-section">
+      <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+          ">
+        <h2>Your Order</h2>
+        <button onclick="clearCart()" style="
+              background: none;
+              border: 1px solid #ff5722;
+              color: #ff5722;
+              padding: 5px 10px;
+              border-radius: 6px;
+              cursor: pointer;
+              font-size: 0.8rem;
+            ">
+          Clear All
+        </button>
+      </div>
+      <div class="food-items-list" id="food-items-list">
+        <!-- Food items will be loaded dynamically -->
+      </div>
+    </section>
+    <hr />
 
-    <div class="checkout-container">
-        <header class="checkout-header">
-            <h1>Checkout</h1>
-        </header>
+    <section class="delivery-type-section">
+      <h2>Delivery Type</h2>
+      <div class="delivery-options">
+        <label class="radio-button-card">
+          <input type="radio" name="deliveryType" value="home" checked />
+          <div class="card-content">
+            <i class="fas fa-home"></i>
+            <span class="type-name">Home Delivery</span>
+            <span class="charge-details">Charge: + ₹ 30</span>
+          </div>
+        </label>
 
-        <section class="delivery-type-section">
-            <h2>Delivery Type</h2>
-            <label class="radio-button-card">
-                <input type="radio" name="deliveryType" value="home">
-                <div class="card-content">
-                    <span class="type-name">Home Delivery</span>
-                    <span class="charge-details">Charge: + ₹ <span id="delivery-charge">30</span></span>
-                </div>
-            </label>
-        </section>
+        <label class="radio-button-card">
+          <input type="radio" name="deliveryType" value="pickup" />
+          <div class="card-content">
+            <i class="fas fa-walking"></i>
+            <span class="type-name">Self Pickup</span>
+            <span class="charge-details">Charge: ₹ 0</span>
+          </div>
+        </label>
+      </div>
+    </section>
 
-        <hr>
+    <hr />
 
-        <section class="address-section">
-            <div class="address-header">
-                <h2>Deliver To</h2>
-                <a href="#" class="add-new">+ Add New</a>
-            </div>
+    <section class="address-section">
+      <div class="address-header">
+        <h2>Customer Details</h2>
+      </div>
+      <div class="inline-fields">
+        <input type="text" id="customer_name" placeholder="Full Name" />
+        <input type="tel" id="customer_phone" placeholder="Phone Number" maxlength="10"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+      </div>
 
-            <div class="selected-address-card">
-                <span class="address-tag">Others</span>
-                <span class="address-text">72-36, Md.Sahib Nagar, Sandapet, T.Keeranur, ...</span>
-                <span class="dropdown-arrow">v</span>
-            </div>
+      <div class="address-header" style="margin-top: 15px;">
+        <h2>Delivery Address</h2>
+      </div>
+      <div class="inline-fields">
+        <input type="text" id="street_num" placeholder="Street Number" />
+        <input type="text" id="street" placeholder="Street Name" />
+      </div>
+      <div class="inline-fields">
+        <input type="text" id="house" placeholder="House / Flat No." />
+        <input type="text" id="floor" placeholder="Floor (Optional)" />
+      </div>
+    </section>
 
-            <input type="text" placeholder="Street Number">
-            <div class="inline-fields">
-                <input type="text" placeholder="House">
-                <input type="text" placeholder="Floor">
-            </div>
-        </section>
+    <hr />
 
-        <hr>
+    <section class="instructions-tip-section">
+      <div class="section-header">
+        <h2>Add More Delivery Instruction</h2>
+        <span>+</span>
+      </div>
+      <div class="tip-section">
+        <h3>Tip for Delivery Partner (Optional)</h3>
+        <div class="tip-options">
+          <button class="tip-btn" data-tip="10" onclick="setTip(this)">
+            ₹10
+          </button>
+          <button class="tip-btn" data-tip="20" onclick="setTip(this)">
+            ₹20
+          </button>
+          <button class="tip-btn" data-tip="50" onclick="setTip(this)">
+            ₹50
+          </button>
+          <input type="number" id="custom-tip" placeholder="Custom Tip" oninput="setCustomTip(this)" />
+        </div>
+      </div>
+    </section>
 
-        <section class="instructions-tip-section">
-            <div class="section-header">
-                <h2>Add More Delivery Instruction</h2>
-                <span>+</span>
-            </div>
-            <div class="tip-section">
-                <h3>Tip for Delivery Partner (Optional)</h3>
-                <div class="tip-options">
-                    <button class="tip-btn" data-tip="10" onclick="setTip(this)">₹10</button>
-                    <button class="tip-btn" data-tip="20" onclick="setTip(this)">₹20</button>
-                    <button class="tip-btn" data-tip="50" onclick="setTip(this)">₹50</button>
-                    <input type="number" id="custom-tip" placeholder="Custom Tip" oninput="setCustomTip(this)">
-                </div>
-            </div>
-        </section>
+    <hr />
 
-        <hr>
+    <section class="promo-section">
+      <div class="promo-header">
+        <h2>Promo Code</h2>
+        <a href="#">Add Voucher +</a>
+      </div>
+      <div class="promo-input-group">
+        <input type="text" id="promo-input" placeholder="Enter Promo Code" />
+        <button class="apply-btn" onclick="applyPromo()">Apply</button>
+      </div>
+    </section>
 
-        <section class="promo-section">
-            <div class="promo-header">
-                <h2>Promo Code</h2>
-                <a href="#">Add Voucher +</a>
-            </div>
-            <div class="promo-input-group">
-                <input type="text" id="promo-input" placeholder="Enter Promo Code">
-                <button class="apply-btn">Apply</button>
-            </div>
-        </section>
+    <hr />
 
-        <hr>
+    <section class="price-details-section">
+      <h2>Price Details</h2>
+      <div class="price-item">
+        <span>Subtotal</span>
+        <span>₹ <span id="subtotal">0</span></span>
+      </div>
+      <div class="price-item">
+        <span>Delivery Charges</span>
+        <span class="green-text">+ ₹ <span id="charge-value">30</span></span>
+      </div>
+      <div class="price-item">
+        <span>Promo Discount</span>
+        <span class="green-text">- ₹ <span id="promo-value">0</span></span>
+      </div>
+      <div class="price-item tip-display">
+        <span>Partner Tip</span>
+        <span class="green-text">+ ₹ <span id="tip-value">0</span></span>
+      </div>
+      <div class="total-amount-line">
+        <span class="vat-tax-note">(Vat/Tax Incl.)</span>
+        <span class="total-text">Total Amount</span>
+        <span class="final-total">₹<span id="final-total">0</span></span>
+      </div>
+    </section>
 
-        <section class="price-details-section">
-            <h2>Price Details</h2>
-            <div class="price-item">
-                <span>Subtotal</span>
-                <span>₹ <span id="subtotal">106</span></span>
-            </div>
-            <div class="price-item">
-                <span>Delivery Charges</span>
-                <span class="green-text">+ ₹ <span id="charge-value">30</span></span>
-            </div>
-            <div class="price-item tip-display">
-                <span>Partner Tip</span>
-                <span class="green-text">+ ₹ <span id="tip-value">0</span></span>
-            </div>
-            <div class="total-amount-line">
-                <span class="vat-tax-note">(Vat/Tax Incl.)</span>
-                <span class="total-text">Total Amount</span>
-                <span class="final-total">₹ <span id="final-total">136</span></span>
-            </div>
-        </section>
+    <button class="place-order-btn">Place Order</button>
+  </div>
 
-        <a href="../HTML/pay_details.html"><button class="place-order-btn">Place Order</button></a>
+  <script src="../js/addtocard.js"></script>
 
+  <!-- Location Modal -->
+  <div id="locationModal" class="location-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Select Your Location</h3>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="map-container" style="overflow-y: auto;">
+        <!-- Modal Location Search -->
+        <div class="modal-search" style="width: 90%; max-width: 800px; margin-bottom: 15px; display: flex; gap: 10px;">
+          <input type="text" id="modalLocationSearch" placeholder="Search for area (e.g. Adyar, Chennai)"
+            style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-dark); background: var(--surface-dark); color: white; outline: none;">
+          <button id="searchAreaBtn"
+            style="padding: 10px 20px; background: var(--primary-orange); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold;">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <div id="map">
+          <iframe id="mapFrame" src="https://maps.google.com/maps?q=Chennai&output=embed" width="100%" height="100%"
+            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <button class="confirm-location-btn">Confirm Location</button>
+      </div>
     </div>
+  </div>
+  <script src="../js/location-map.js"></script>
 
-    <script src="../../CSS/js/addtocard.js"></script>
+
 </body>
 
 </html>

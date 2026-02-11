@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../CSS/Breakfast/Breakfast.css">
+    <link rel="stylesheet" href="../../CSS/location-modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 
 <body>
     <header class="navbar">
-        <div class="logo">Local Eats</div>
+        <a href="../../index.html">
+            <div class="logo">Local Eats</div>
+        </a>
 
         <div class="location-input">
             <i class="fas fa-map-marker-alt"></i>
@@ -25,10 +28,10 @@
             <i class="fas fa-search"></i>
         </div>
         <div class="auth-btn">
-            <a href="./HTML/sign_up.html">SIGN UP</a>
+            <a href="../sign_up.html">SIGN UP</a>
         </div>
         <div class="login">
-            <a href="./HTML/Login.html">LOGIN</a>
+            <a href="../Login.html">LOGIN</a>
         </div>
     </header><br><br>
 
@@ -38,92 +41,131 @@
 
         <div class="food-card">
             <div class="image-box">
-                <a href="../../HTML/Breakfast/pongal.html"><img src="../../assets/Break fast/images 1.jpg"
-                        alt="Coconut Chutney"></a>
+                <a href="./pongal.html"><img src="../../assets/Break%20fast/images%201.jpg" alt="Pongal"></a>
             </div>
             <div class="details-box">
                 <div class="heart-icon">Delicious Pongal</div>
                 <h3 class="title">Pongal</h3>
                 <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
+                <p class="description">Authentic Tamil style Ven Pongal.</p>
                 <div class="price">₹50</div>
             </div>
-            <a href="../../HTML/addtocard.html"><button class="add-button">Add</button></a>
+            <button class="add-button"
+                onclick="addToCart(1, 'Pongal', '../../assets/Break fast/images 1.jpg', 50, '★★★★☆ 4.5', 'Authentic Tamil style Ven Pongal.')">Add</button>
         </div>
 
         <div class="food-card">
             <div class="image-box">
-                <a href="../../HTML/Breakfast/kichidi.html"><img src="../../assets/Break fast/kichadi.webp"
-                        alt="Coconut Chutney"></a>
+                <a href="./kichidi.html"><img src="../../assets/Break%20fast/kichadi.webp" alt="Kichidi"></a>
             </div>
             <div class="details-box">
                 <div class="heart-icon">Delicious Kichidi </div>
                 <h3 class="title">Kichidi</h3>
                 <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
+                <p class="description">Delicious and healthy vegetable kichadi.</p>
                 <div class="price">₹50</div>
             </div>
-            <a href="../../HTML/addtocard.html"><button class="add-button">Add</button></a>
+            <button class="add-button"
+                onclick="addToCart(16, 'Kichidi', '../../assets/Break fast/kichadi.webp', 50, '★★★★☆ 4.5', 'Delicious and healthy vegetable kichadi.')">Add</button>
         </div>
 
         <div class="food-card">
             <div class="image-box">
-                <a href="../../HTML/Breakfast/apaem.html"> <img src="../../assets/Break fast/maxresdefault.jpg"
-                        alt="Coconut Chutney"></a>
+                <a href="./apaem.html"> <img src="../../assets/Break%20fast/maxresdefault.jpg" alt="Apeam"></a>
             </div>
             <div class="details-box">
                 <div class="heart-icon">Delicious Apeam</div>
                 <h3 class="title">Apeam</h3>
                 <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
+                <p class="description">Soft and fluffy Appam, a Kerala specialty.</p>
                 <div class="price">₹50</div>
             </div>
-            <a href="../../HTML/addtocard.html"><button class="add-button">Add</button></a>
+            <button class="add-button"
+                onclick="addToCart(17, 'Apeam', '../../assets/Break fast/maxresdefault.jpg', 50, '★★★★☆ 4.5', 'Soft and fluffy Appam, a Kerala specialty.')">Add</button>
         </div>
         <div class="food-card">
             <div class="image-box">
-                <a href="../../HTML/Breakfast/poori.html"><img src="../../assets/Break fast/poori-masala-recipe-480x270.jpg"
-                        alt="Coconut Chutney"></a>
+                <a href="./poori.html"><img src="../../assets/Break%20fast/poori-masala-recipe-480x270.jpg"
+                        alt="Poori Masala"></a>
             </div>
             <div class="details-box">
                 <div class="heart-icon">Delicious Poori Masala</div>
                 <h3 class="title">Poori Masala</h3>
                 <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
+                <p class="description">Golden fried Poori with potato masala.</p>
                 <div class="price">₹50</div>
             </div>
-            <a href="../../HTML/addtocard.html"><button class="add-button">Add</button></a>
+            <button class="add-button"
+                onclick="addToCart(18, 'Poori Masala', '../../assets/Break fast/poori-masala-recipe-480x270.jpg', 50, '★★★★☆ 4.5', 'Golden fried Poori with potato masala.')">Add</button>
         </div>
         <div class="food-card">
             <div class="image-box">
-                <a href="../../HTML/Breakfast/ideyapaem.html"> <img src="../../assets/Break fast/idiyappam-coconut-milk.jpg"
-                        alt="Coconut Chutney"></a>
+                <a href="./ideyapaem.html"> <img src="../../assets/Break%20fast/idiyappam-coconut-milk.jpg"
+                        alt="Idiyappam"></a>
             </div>
             <div class="details-box">
                 <div class="heart-icon">Delicious Idiyappam</div>
                 <h3 class="title">Idiyappam coconut milk</h3>
                 <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
+                <p class="description">String hoppers served with sweet coconut milk.</p>
                 <div class="price">₹50</div>
             </div>
-            <a href="../../HTML/addtocard.html"><button class="add-button">Add</button></a>
+            <button class="add-button"
+                onclick="addToCart(2, 'Idiyappam coconut milk', '../../assets/Break fast/idiyappam-coconut-milk.jpg', 50, '★★★★☆ 4.5', 'String hoppers served with sweet coconut milk.')">Add</button>
         </div>
 
         <div class="food-card">
             <div class="image-box">
-                <a href="../../HTML/Breakfast/chappathi.html"><img
-                        src="../../assets/Break fast/Mixed Vegetable Kurma - Madras Style.jpg" alt="Coconut Chutney"></a>
+                <a href="./chappathi.html"><img
+                        src="../../assets/Break%20fast/Mixed%20Vegetable%20Kurma%20-%20Madras%20Style.jpg"
+                        alt="Chappathi"></a>
             </div>
             <div class="details-box">
                 <div class="heart-icon">Delicious Chappathi</div>
                 <h3 class="title">Chappathi Vegetable Kurma </h3>
                 <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
+                <p class="description">Soft chappathi served with Mixed Vegetable Kurma.</p>
                 <div class="price">₹50</div>
             </div>
-            <a href="../../HTML/addtocard.html"><button class="add-button">Add</button></a>
+            <button class="add-button"
+                onclick="addToCart(19, 'Chappathi Vegetable Kurma', '../../assets/Break fast/Mixed Vegetable Kurma - Madras Style.jpg', 50, '★★★★☆ 4.5', 'Soft chappathi served with Mixed Vegetable Kurma.')">Add</button>
         </div>
     </div>
+    <script src="../../js/cart-utils.js"></script>
+
+    <script src="../../js/auth.js"></script>
+
+    <!-- Location Modal -->
+    <div id="locationModal" class="location-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Your Location</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="map-container" style="overflow-y: auto;">
+                <!-- Modal Location Search -->
+                <div class="modal-search"
+                    style="width: 90%; max-width: 800px; margin-bottom: 15px; display: flex; gap: 10px;">
+                    <input type="text" id="modalLocationSearch" placeholder="Search for area (e.g. Adyar, Chennai)"
+                        style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-dark); background: var(--surface-dark); color: white; outline: none;">
+                    <button id="searchAreaBtn"
+                        style="padding: 10px 20px; background: var(--primary-orange); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div id="map">
+                    <iframe id="mapFrame" src="https://maps.google.com/maps?q=Chennai&output=embed" width="100%"
+                        height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <button class="confirm-location-btn">Confirm Location</button>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/location-map.js"></script>
+
+
 </body>
 <footer class="main-footer">
     <div class="footer-content-wrapper">
@@ -131,27 +173,27 @@
         <div class="footer-block">
             <div class="footer-title logo">Local Eats</div>
             <div class="footer-link-list">
-                <a href="#">About Us</a>
-                <a href="#">Careers</a>
-                <a href="#">Partner with Us</a>
-                <a href="#">Contact Us</a>
+                <a href="../about.html#about">About Us</a>
+                <a href="../about.html#careers">Careers</a>
+                <a href="../about.html#partner">Partner with Us</a>
+                <a href="../about.html#help">Contact Us</a>
             </div>
         </div>
 
         <div class="footer-block">
             <div class="footer-title">Help</div>
             <div class="footer-link-list">
-                <a href="#">Help & FAQs</a>
-                <a href="#">Track Order</a>
-                <a href="#">Report Issue</a>
+                <a href="../about.html#help">Help & FAQs</a>
+                <a href="../about.html#help">Track Order</a>
+                <a href="../about.html#help">Report Issue</a>
             </div>
         </div>
 
         <div class="footer-block">
             <div class="footer-title">Legal</div>
             <div class="footer-link-list">
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
+                <a href="../about.html#terms">Terms & Conditions</a>
+                <a href="../about.html#privacy">Privacy Policy</a>
             </div>
 
             <div class="social-icons">

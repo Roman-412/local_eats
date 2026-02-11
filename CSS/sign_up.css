@@ -1,4 +1,4 @@
-/* --- Color Variables --- */
+﻿/* --- Color Variables --- */
 :root {
     --primary-orange: #FF5722; /* Vibrant Orange for actions/highlights */
     --secondary-green: #4CAF50; /* Green (used optionally, but defined here) */
@@ -206,4 +206,41 @@ body {
     /* If you wanted to highlight the register link */
     color: var(--secondary-green); 
     font-weight: 600;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .signup-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+    
+    .app-title {
+        font-size: 2em;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .signup-container {
+        padding: 20px;
+        max-width: 95%;
+    }
+    
+    .app-title {
+        font-size: 1.8em;
+    }
+    
+    .tagline {
+        font-size: 0.9em;
+    }
+    
+    .signup-btn {
+        padding: 14px;
+        font-size: 1em;
+    }
 }

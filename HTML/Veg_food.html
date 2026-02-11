@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/veg.css">
+    <link rel="stylesheet" href="../CSS/location-modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 
 <body>
     <header class="navbar">
-        <div class="logo">Local Eats</div>
+        <a href="../index.html">
+            <div class="logo">Local Eats</div>
+        </a>
 
         <div class="location-input">
             <i class="fas fa-map-marker-alt"></i>
@@ -24,146 +27,98 @@
             <input type="text" placeholder="Search">
             <i class="fas fa-search"></i>
         </div>
-        <div class="auth-btn">
-            <a href="./HTML/sign_up.html">SIGN UP</a>
+        <div class="auth-buttons-container" id="auth-buttons-container">
+            <div class="auth-btn">
+                <a href="sign_up.html">SIGN UP</a>
+            </div>
+            <div class="login">
+                <a href="Login.html">LOGIN</a>
+            </div>
         </div>
-        <div class="login">
-            <a href="./HTML/Login.html">LOGIN</a>
+        <div class="user-profile-container" id="user-profile-container"
+            style="display: none; align-items: center; gap: 15px;">
+            <span id="welcome-message" style="color: white; font-weight: 600;"></span>
+            <button onclick="logout()"
+                style="background: var(--primary-orange); color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: bold;">Logout</button>
         </div>
     </header>
     <div class="Name">ORDER OUR BEST FOOD OPTIONS</div>
 
-    <div class="menu-container">
+    <div id="menu-container" class="menu-container">
+        <!-- Foods will be loaded dynamically -->
+    </div>
 
-        <div class="food-card">
-            <div class="image-box">
-                <a href="/HTML/Breakfast/pongal.html"> <img src="../assets/Break fast/images 1.jpg"
-                        alt="Coconut Chutney"></a>
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart-utils.js"></script>
+    <script src="../js/food-loader.js"></script>
+    <!-- Location Modal -->
+    <div id="locationModal" class="location-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Your Location</h3>
+                <span class="close-modal">&times;</span>
             </div>
-            <div class="details-box">
-                <div class="heart-icon">Delicious</div>
-                <h3 class="title">Coconut Chutney</h3>
-                <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
-                <div class="price">₹50</div>
-            </div>
-            <a href="/HTML/addtocard.html"><button class="add-button">Add</button></a>
-        </div>
+            <div class="map-container" style="overflow-y: auto;">
+                <!-- Modal Location Search -->
+                <div class="modal-search"
+                    style="width: 90%; max-width: 800px; margin-bottom: 15px; display: flex; gap: 10px;">
+                    <input type="text" id="modalLocationSearch" placeholder="Search for area (e.g. Adyar, Chennai)"
+                        style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-dark); background: var(--surface-dark); color: white; outline: none;">
+                    <button id="searchAreaBtn"
+                        style="padding: 10px 20px; background: var(--primary-orange); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
 
-        <div class="food-card">
-            <div class="image-box">
-                <a href="/HTML/Breakfast/kichidi.html"><img src="../assets/Break fast/kichadi.webp"
-                        alt="Coconut Chutney"></a>
-            </div>
-            <div class="details-box">
-                <div class="heart-icon">Delicious</div>
-                <h3 class="title">Coconut Chutney</h3>
-                <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
-                <div class="price">₹50</div>
-            </div>
-            <a href="/HTML/addtocard.html"><button class="add-button">Add</button></a>
-        </div>
+                <div id="map">
+                    <iframe id="mapFrame" src="https://maps.google.com/maps?q=Chennai&output=embed" width="100%"
+                        height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
 
-        <div class="food-card">
-            <div class="image-box">
-                <a href="/HTML/Breakfast/apaem.html"> <img src="../assets/Break fast/maxresdefault.jpg"
-                        alt="Coconut Chutney"></a>
+                <button class="confirm-location-btn">Confirm Location</button>
             </div>
-            <div class="details-box">
-                <div class="heart-icon">Delicious</div>
-                <h3 class="title">Coconut Chutney</h3>
-                <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
-                <div class="price">₹50</div>
-            </div>
-            <a href="/HTML/addtocard.html"><button class="add-button">Add</button></a>
-        </div>
-        <div class="food-card">
-            <div class="image-box">
-                <a href="/HTML/Breakfast/poori.html"><img src="../assets/Break fast/poori-masala-recipe-480x270.jpg"
-                        alt="Coconut Chutney"></a>
-            </div>
-            <div class="details-box">
-                <div class="heart-icon">Delicious</div>
-                <h3 class="title">Coconut Chutney</h3>
-                <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
-                <div class="price">₹50</div>
-            </div>
-            <a href="/HTML/addtocard.html"><button class="add-button">Add</button></a>
-        </div>
-        <div class="food-card">
-            <div class="image-box">
-                <a href="/HTML/Breakfast/ideyapaem.html"> <img src="../assets/Break fast/idiyappam-coconut-milk.jpg"
-                        alt="Coconut Chutney"></a>
-            </div>
-            <div class="details-box">
-                <div class="heart-icon">Delicious</div>
-                <h3 class="title">Coconut Chutney</h3>
-                <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
-                <div class="price">₹50</div>
-            </div>
-            <a href="/HTML/addtocard.html"><button class="add-button">Add</button></a>
-        </div>
-
-        <div class="food-card">
-            <div class="image-box">
-                <a href="/HTML/Breakfast/chappathi.html"><img
-                        src="../assets/Break fast/Mixed Vegetable Kurma - Madras Style.jpg" alt="Coconut Chutney"></a>
-            </div>
-            <div class="details-box">
-                <div class="heart-icon">Delicious</div>
-                <h3 class="title">Coconut Chutney</h3>
-                <div class="rating">★★★★☆ 4.5</div>
-                <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
-                <div class="price">₹50</div>
-            </div>
-            <a href="/HTML/addtocard.html"><button class="add-button">Add</button></a>
         </div>
     </div>
+    <script src="../js/location-map.js"></script>
+
+    <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-block">
+                <div class="footer-title logo">Local Eats</div>
+                <div class="footer-link-list">
+                    <a href="about.html#about">About Us</a>
+                    <a href="about.html#careers">Careers</a>
+                    <a href="about.html#partner">Partner with Us</a>
+                    <a href="about.html#help">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-block">
+                <div class="footer-title">Help</div>
+                <div class="footer-link-list">
+                    <a href="about.html#help">Help & FAQs</a>
+                    <a href="about.html#help">Track Order</a>
+                    <a href="about.html#help">Report Issue</a>
+                </div>
+            </div>
+            <div class="footer-block">
+                <div class="footer-title">Legal</div>
+                <div class="footer-link-list">
+                    <a href="about.html#terms">Terms & Conditions</a>
+                    <a href="about.html#privacy">Privacy Policy</a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 Local Eats. All rights reserved.
+        </div>
+    </footer>
+
+
 </body>
-<footer class="main-footer">
-    <div class="footer-content-wrapper">
-
-        <div class="footer-block">
-            <div class="footer-title logo">Local Eats</div>
-            <div class="footer-link-list">
-                <a href="#">About Us</a>
-                <a href="#">Careers</a>
-                <a href="#">Partner with Us</a>
-                <a href="#">Contact Us</a>
-            </div>
-        </div>
-
-        <div class="footer-block">
-            <div class="footer-title">Help</div>
-            <div class="footer-link-list">
-                <a href="#">Help & FAQs</a>
-                <a href="#">Track Order</a>
-                <a href="#">Report Issue</a>
-            </div>
-        </div>
-
-        <div class="footer-block">
-            <div class="footer-title">Legal</div>
-            <div class="footer-link-list">
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-copyright">
-        &copy; 2025 Local Eats. All rights reserved.
-    </div>
-</footer>
 
 </html>

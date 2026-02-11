@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../CSS/shop/shop.4.css">
+    <link rel="stylesheet" href="../../CSS/shop/shop-responsive.css">
+    <link rel="stylesheet" href="../../CSS/location-modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 
 <body>
     <header class="navbar">
-        <div class="logo">Local Eats</div>
+        <a href="../../index.html">
+            <div class="logo">Local Eats</div>
+        </a>
 
         <div class="location-input">
             <i class="fas fa-map-marker-alt"></i>
@@ -25,17 +29,18 @@
             <i class="fas fa-search"></i>
         </div>
         <div class="auth-btn">
-            <a href="./HTML/sign_up.html">SIGN UP</a>
+            <a href="../sign_up.html">SIGN UP</a>
         </div>
         <div class="login">
-            <a href="./HTML/Login.html">LOGIN</a>
+            <a href="../Login.html">LOGIN</a>
         </div>
     </header>
     <div class="product-page-container">
 
         <div class="product-info-block">
             <div class="product-image-area">
-                <img src="../../assets/Lunch/fish image.jpg" alt="Mehfuz Makhmli Murgh Thali" class="product-main-image">
+                <img src="../../assets/Lunch/fish image.jpg" alt="Mehfuz Makhmli Murgh Thali"
+                    class="product-main-image">
             </div>
 
             <div class="product-details-area">
@@ -57,7 +62,7 @@
                 </div>
 
                 <h1 class="product-title">
-                    [Local Eats Dish fish gravy with Sides Roadside Special]
+                    [2 Idly 1 Vada fish gravy with Sides Roadside Special]
                 </h1>
 
                 <div class="product-badges">
@@ -66,19 +71,19 @@
                 </div>
 
                 <p class="product-description">
-                    [Short description of the dish and what it includes. This is the "Shandaar Murgh Afghani Tikka..."
-                    text.]
+                    A tasty dish prepared with fresh ingredients and simple spices. Cooked with care to give a good
+                    flavor and enjoyable taste, suitable for both veg and non-veg lovers.
                     <span class="read-more">... Read More</span>
                 </p>
-
                 <div class="price-action-row">
                     <div class="pricing">
-                        <span class="current-price">₹ 259</span>
-                        <span class="old-price">₹ 419</span>
+                        <span class="current-price">₹ 80</span>
+                        <span class="old-price">₹ 150</span>
                     </div>
-                 <a href="../../HTML/addtocard.html"><button class="add-to-cart-button">
-                            Add
-                        </button></a>
+                    <button class="add-to-cart-button"
+                        onclick="addToCart(2, 'fish gravy', '../../assets/Lunch/fish image.jpg', 80, '★★★★☆ 4.2', 'A tasty dish prepared with fresh ingredients and simple spices.')">
+                        Add
+                    </button>
                 </div>
 
             </div>
@@ -87,7 +92,8 @@
 
             <div class="product-info-block">
                 <div class="product-image-area">
-                    <img src="../../assets/Dinner/parotta.jpg" alt="Mehfuz Makhmli Murgh Thali" class="product-main-image">
+                    <img src="../../assets/Dinner/parotta.jpg" alt="Mehfuz Makhmli Murgh Thali"
+                        class="product-main-image">
                 </div>
 
                 <div class="product-details-area">
@@ -109,7 +115,7 @@
                     </div>
 
                     <h1 class="product-title">
-                        [Local Eats Dish Parotta with Sides Roadside Special]
+                        [2 Idly 1 Vada Parotta with Sides Roadside Special]
                     </h1>
 
                     <div class="product-badges">
@@ -118,19 +124,20 @@
                     </div>
 
                     <p class="product-description">
-                        [Short description of the dish and what it includes. This is the "Shandaar Murgh Afghani
-                        Tikka..." text.]
+                        A tasty dish prepared with fresh ingredients and simple spices. Cooked with care to give a good
+                        flavor and enjoyable taste, suitable for both veg and non-veg lovers.
                         <span class="read-more">... Read More</span>
                     </p>
 
                     <div class="price-action-row">
                         <div class="pricing">
-                            <span class="current-price">₹ 259</span>
-                            <span class="old-price">₹ 419</span>
+                            <span class="current-price">₹ 45</span>
+                            <span class="old-price">₹ 80</span>
                         </div>
-                        <a href="../../HTML/addtocard.html"><button class="add-to-cart-button">
-                                Add
-                            </button></a>
+                        <button class="add-to-cart-button"
+                            onclick="addToCart(15, 'Parotta', '../../assets/Dinner/parotta.jpg', 45, '★★★★☆ 4.2', 'A tasty dish prepared with fresh ingredients and simple spices.')">
+                            Add
+                        </button>
                     </div>
 
                 </div>
@@ -163,7 +170,7 @@
                         </div>
 
                         <h1 class="product-title">
-                            [Local Eats Dish Masala Dosa with Sides Roadside Special]
+                            [2 Idly 1 Vada Masala Dosa with Sides Roadside Special]
                         </h1>
 
                         <div class="product-badges">
@@ -172,19 +179,20 @@
                         </div>
 
                         <p class="product-description">
-                            [Short description of the dish and what it includes. This is the "Shandaar Murgh Afghani
-                            Tikka..." text.]
+                            A tasty dish prepared with fresh ingredients and simple spices. Cooked with care to give a
+                            good
+                            flavor and enjoyable taste, suitable for both veg and non-veg lovers.
                             <span class="read-more">... Read More</span>
                         </p>
-
                         <div class="price-action-row">
                             <div class="pricing">
-                                <span class="current-price">₹ 259</span>
-                                <span class="old-price">₹ 419</span>
+                                <span class="current-price">₹ 60</span>
+                                <span class="old-price">₹ 80</span>
                             </div>
-                            <a href="../../HTML/addtocard.html"><button class="add-to-cart-button">
-                                    Add
-                                </button></a>
+                            <button class="add-to-cart-button"
+                                onclick="addToCart(13, 'Masala Dosa', '../../assets/Dinner/masala dosa.jpg', 60, '★★★★☆ 4.2', 'A tasty dish prepared with fresh ingredients and simple spices.')">
+                                Add
+                            </button>
                         </div>
 
                     </div>
@@ -216,7 +224,7 @@
                             </div>
 
                             <h1 class="product-title">
-                                [Local Eats Dish Kadamba Sambar with Sides Roadside Special]
+                                [2 Idly 1 Vada Kadamba Sambar with Sides Roadside Special]
                             </h1>
 
                             <div class="product-badges">
@@ -225,19 +233,21 @@
                             </div>
 
                             <p class="product-description">
-                                [Short description of the dish and what it includes. This is the "Shandaar Murgh Afghani
-                                Tikka..." text.]
+                                A tasty dish prepared with fresh ingredients and simple spices. Cooked with care to give
+                                a good
+                                flavor and enjoyable taste, suitable for both veg and non-veg lovers.
                                 <span class="read-more">... Read More</span>
                             </p>
 
                             <div class="price-action-row">
                                 <div class="pricing">
-                                    <span class="current-price">₹ 259</span>
-                                    <span class="old-price">₹ 419</span>
+                                    <span class="current-price">₹ 100</span>
+                                    <span class="old-price">₹ 219</span>
                                 </div>
-                                <a href="../../HTML/addtocard.html"><button class="add-to-cart-button">
-                            Add
-                        </button></a>
+                                <button class="add-to-cart-button"
+                                    onclick="addToCart(22, 'Kadamba Sambar', '../../assets/Lunch/Kadamba-Sambar.jpg', 100, '★★★★☆ 4.2', 'A tasty dish prepared with fresh ingredients and simple spices.')">
+                                    Add
+                                </button>
                             </div>
 
                         </div>
@@ -245,34 +255,71 @@
 
 
 
+
+                    <!-- Location Modal -->
+                    <div id="locationModal" class="location-modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Select Your Location</h3>
+                                <span class="close-modal">&times;</span>
+                            </div>
+                            <div class="map-container" style="overflow-y: auto;">
+                                <!-- Modal Location Search -->
+                                <div class="modal-search"
+                                    style="width: 90%; max-width: 800px; margin-bottom: 15px; display: flex; gap: 10px;">
+                                    <input type="text" id="modalLocationSearch"
+                                        placeholder="Search for area (e.g. Adyar, Chennai)"
+                                        style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-dark); background: var(--surface-dark); color: white; outline: none;">
+                                    <button id="searchAreaBtn"
+                                        style="padding: 10px 20px; background: var(--primary-orange); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold;">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+
+                                <div id="map">
+                                    <iframe id="mapFrame" src="https://maps.google.com/maps?q=Chennai&output=embed"
+                                        width="100%" height="100%" style="border:0;" allowfullscreen=""
+                                        loading="lazy"></iframe>
+                                </div>
+
+                                <button class="confirm-location-btn">Confirm Location</button>
+                            </div>
+                        </div>
+                    </div>
+
+
 </body>
+<script src="../../js/auth.js"></script>
+<script src="../../js/location-map.js"></script>
+<script src="../../js/cart-utils.js"></script>
+
 <footer class="main-footer">
     <div class="footer-content-wrapper">
 
         <div class="footer-block">
             <div class="footer-title logo">Local Eats</div>
             <div class="footer-link-list">
-                <a href="#">About Us</a>
-                <a href="#">Careers</a>
-                <a href="#">Partner with Us</a>
-                <a href="#">Contact Us</a>
+                <a href="../about.html#about">About Us</a>
+                <a href="../about.html#careers">Careers</a>
+                <a href="../about.html#partner">Partner with Us</a>
+                <a href="../about.html#help">Contact Us</a>
             </div>
         </div>
 
         <div class="footer-block">
             <div class="footer-title">Help</div>
             <div class="footer-link-list">
-                <a href="#">Help & FAQs</a>
-                <a href="#">Track Order</a>
-                <a href="#">Report Issue</a>
+                <a href="../about.html#help">Help & FAQs</a>
+                <a href="../about.html#help">Track Order</a>
+                <a href="../about.html#help">Report Issue</a>
             </div>
         </div>
 
         <div class="footer-block">
             <div class="footer-title">Legal</div>
             <div class="footer-link-list">
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
+                <a href="../about.html#terms">Terms & Conditions</a>
+                <a href="../about.html#privacy">Privacy Policy</a>
             </div>
 
             <div class="social-icons">

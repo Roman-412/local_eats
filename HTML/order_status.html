@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status - Local Eats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/order_status.css">
+
+</head>
+
+<body>
+
+    <div class="status-container">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h2>Payment Successful!</h2>
+        <p class="order-id">Order ID: #LE<span id="order-number"></span></p>
+        <div class="order-details">
+            <p><strong>Total Amount:</strong> ₹<span id="order-total">0</span></p>
+            <p><strong>Payment Method:</strong> <span id="payment-method">UPI</span></p>
+        </div>
+
+        <div class="track-wrapper">
+            <div class="progress-line" id="progress"></div>
+
+            <div class="step active">
+                <i class="fas fa-clipboard-list"></i>
+                <p>Placed</p>
+            </div>
+            <div class="step active" id="step2">
+                <i class="fas fa-utensils"></i>
+                <p>Preparing</p>
+            </div>
+            <div class="step" id="step3">
+                <i class="fas fa-motorcycle"></i>
+                <p>On Way</p>
+            </div>
+            <div class="step" id="step4">
+                <i class="fas fa-home"></i>
+                <p>Delivered</p>
+            </div>
+        </div>
+
+        <div class="status-msg" id="msg">
+            <i class="fas fa-clock"></i> Your food is being prepared in the kitchen...
+        </div>
+
+        <button class="home-btn" onclick="window.location.href='../index.html'">Back to Home</button>
+    </div>
+    <script src="../js/orderstatus.js"></script>
+
+
+</body>
+
+</html>

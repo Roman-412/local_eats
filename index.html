@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food App Home - Orange & Black</title>
     <link rel="icon" type="image/x-icon" href="./assets/LE photo.png">
-    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -17,7 +18,7 @@
 
         <div class="location-input">
             <i class="fas fa-map-marker-alt"></i>
-            <input type="text" placeholder="Enter your location">
+            <input type="text" value="Chennai" placeholder="Enter your location">
             <i class="fas fa-chevron-down"></i>
         </div>
 
@@ -25,13 +26,21 @@
             <input type="text" placeholder="Search">
             <i class="fas fa-search"></i>
         </div>
-        <div class="auth-btn">
-            <a href="./HTML/sign_up.html">SIGN UP</a>
+        <div class="auth-buttons-container" id="auth-buttons-container">
+            <div class="auth-btn">
+                <a href="./HTML/sign_up.html">SIGN UP</a>
+            </div>
+            <div class="login">
+                <a href="./HTML/Login.html">LOGIN</a>
+            </div>
+        </div>
+        <div class="user-profile-container" id="user-profile-container"
+            style="display: none; align-items: center; gap: 15px;">
+            <span id="welcome-message" style="color: white; font-weight: 600;"></span>
+            <button onclick="logout()"
+                style="background: var(--primary-orange); color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: bold;">Logout</button>
         </div>
         <div class="login">
-            <a href="./HTML/Login.html">LOGIN</a>
-        </div>
-         <div class="login">
             <a href="./HTML/Vendor_Registration.html">Register</a>
         </div>
     </header>
@@ -71,21 +80,21 @@
                         </div>
                         <div class="category-item">
                             <div class="category-circle-img">
-                                <a href="../local_eats/HTML/Lunch/Lunch.html"><img src="./assets/Home/lunch-removebg-preview.png"
+                                <a href="./HTML/Lunch/Lunch.html"><img src="./assets/Home/lunch-removebg-preview.png"
                                         alt="Burger Category"></a>
                             </div>
                             <p class="category-name">Lunch</p>
                         </div>
                         <div class="category-item">
                             <div class="category-circle-img">
-                                <a href="../local_eats/HTML/Snacks/Snacks.html"><img src="./assets/Home/snacks.jpg"
+                                <a href="./HTML/Snacks/Snacks.html"><img src="./assets/Home/snacks.jpg"
                                         alt="Sushi Category"></a>
                             </div>
                             <p class="category-name">snacks</p>
                         </div>
                         <div class="category-item">
                             <div class="category-circle-img">
-                                <a href="../local_eats/HTML/Diner/diner.html"> <img src="./assets/Home/diner.jpg"
+                                <a href="./HTML/Diner/diner.html"> <img src="./assets/Home/diner.jpg"
                                         alt="Desserts Category"></a>
                             </div>
                             <p class="category-name">Diner</p>
@@ -101,7 +110,7 @@
                         <div class="shop-item">
                             <div class="shop-image-block">
                                 <a href="./HTML/shops/shop_1.html"> <img src="./assets/shops image/road shop 1.jpg"
-                                    alt="Local Taco Stand"></a>
+                                        alt="Local Taco Stand"></a>
                             </div>
                             <p class="shop-name">Rasam River</p>
                         </div>
@@ -136,8 +145,8 @@
 
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Breakfast/pongal.html"><img src="./assets/Break fast/images 1.jpg"
-                                alt="Coconut Chutney"></a>
+                        <a href="./HTML/Breakfast/pongal.html"><img id="productImage"
+                                src="./assets/Break%20fast/images%201.jpg" alt="Pongal"></a>
                     </div>
                     <div class="details-box">
                         <div class="heart-icon">Delicious Pongal</div>
@@ -146,13 +155,14 @@
                         <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
                         <div class="price">₹50</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(1, 'Pongal Sambar', './assets/Break fast/images 1.jpg', 50, '★★★★☆ 4.5', 'A fresh, creamy side dish made with coconut, tempering, and spices.')">Add</button>
                 </div>
 
                 <div class="food-card">
                     <div class="image-box">
                         <a href="./HTML/Breakfast/ideyapaem.html"> <img
-                                src="./assets/Break fast/idiyappam-coconut-milk.jpg" alt="Cheese Burst Pizza"></a>
+                                src="./assets/Break%20fast/idiyappam-coconut-milk.jpg" alt="Cheese Burst Pizza"></a>
                     </div>
                     <div class="details-box">
                         <div class="heart-icon">Delicious idiyappam </div>
@@ -161,12 +171,13 @@
                         <p class="description">Loaded with extra cheese, veggies, and a crispy crust.</p>
                         <div class="price">₹45</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(2, 'idiyappam coconut milk', './assets/Break fast/idiyappam-coconut-milk.jpg', 45, '★★★★☆ 4.2', 'Loaded with extra cheese, veggies, and a crispy crust.')">Add</button>
                 </div>
 
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Lunch/chiken Briyani.html"> <img src="./assets/Lunch/chiken Biryani.jpg"
+                        <a href="./HTML/Lunch/chiken Briyani.html"> <img src="./assets/Lunch/chiken%20Biryani.jpg"
                                 alt="Veg Biryani"></a>
                     </div>
                     <div class="details-box">
@@ -177,11 +188,12 @@
                         </p>
                         <div class="price">₹120</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(3, 'Chiken Biryani', './assets/Lunch/chiken Biryani.jpg', 120, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Lunch/veg pulao.html"><img src="./assets/Lunch/veg pulao.jpg"
+                        <a href="./HTML/Lunch/veg pulao.html"><img src="./assets/Lunch/veg%20pulao.jpg"
                                 alt="Veg Biryani"></a>
                     </div>
                     <div class="details-box">
@@ -192,11 +204,12 @@
                         </p>
                         <div class="price">₹120</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(4, 'veg pulao', './assets/Lunch/veg pulao.jpg', 120, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Snacks/masala_vada.html"> <img src="./assets/Snacks/masala vada.jpg"
+                        <a href="./HTML/Snacks/masala_vada.html"> <img src="./assets/Snacks/masala%20vada.jpg"
                                 alt="Coconut Chutney"></a>
                     </div>
                     <div class="details-box">
@@ -206,12 +219,13 @@
                         <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
                         <div class="price">₹40</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(5, 'Masala vada', './assets/Snacks/masala vada.jpg', 40, '★★★★☆ 4.5', 'A fresh, creamy side dish made with coconut, tempering, and spices.')">Add</button>
                 </div>
 
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Snacks/gulab_jamun.html"><img src="./assets/Snacks/gulab jamun.jpg"
+                        <a href="./HTML/Snacks/gulab_jamun.html"><img src="./assets/Snacks/gulab%20jamun.jpg"
                                 alt="Cheese Burst Pizza"></a>
                     </div>
                     <div class="details-box">
@@ -221,7 +235,8 @@
                         <p class="description">Loaded with extra cheese, veggies, and a crispy crust.</p>
                         <div class="price">₹45</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(6, 'Gulab jamun', './assets/Snacks/gulab jamun.jpg', 45, '★★★★☆ 4.2', 'Loaded with extra cheese, veggies, and a crispy crust.')">Add</button>
                 </div>
 
                 <div class="food-card">
@@ -236,7 +251,8 @@
                         </p>
                         <div class="price">₹30</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(7, 'Samosa', './assets/Snacks/samosa.jpg', 30, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
@@ -251,11 +267,12 @@
                         </p>
                         <div class="price">₹60</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(8, 'payasam', './assets/Snacks/payasam.jpeg', 60, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Diner/chicken_noodles.html"><img src="./assets/Dinner/chicken noodles.jpg"
+                        <a href="./HTML/Diner/chicken_noodles.html"><img src="./assets/Dinner/chicken%20noodles.jpg"
                                 alt="Coconut Chutney"></a>
                     </div>
                     <div class="details-box">
@@ -265,7 +282,8 @@
                         <p class="description">A fresh, creamy side dish made with coconut, tempering, and spices.</p>
                         <div class="price">₹120</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(9, 'Chicken noodles', './assets/Dinner/chicken noodles.jpg', 120, '★★★★☆ 4.5', 'A fresh, creamy side dish made with coconut, tempering, and spices.')">Add</button>
                 </div>
 
                 <div class="food-card">
@@ -280,7 +298,8 @@
                         <p class="description">Loaded with extra cheese, veggies, and a crispy crust.</p>
                         <div class="price">₹90</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(10, 'Chicken shawarma', './assets/Dinner/Chicken-Shawarma-Recipe.jpg', 90, '★★★★☆ 4.2', 'Loaded with extra cheese, veggies, and a crispy crust.')">Add</button>
                 </div>
 
                 <div class="food-card">
@@ -296,11 +315,12 @@
                         </p>
                         <div class="price">₹100</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(11, 'Masala Dosa', './assets/Dinner/masala dosa.jpg', 100, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Diner/chicken_rice.html"><img src="./assets/Dinner/chicken rice.jpg"
+                        <a href="./HTML/Diner/chicken_rice.html"><img src="./assets/Dinner/chicken%20rice.jpg"
                                 alt="Veg Biryani"></a>
                     </div>
                     <div class="details-box">
@@ -311,12 +331,13 @@
                         </p>
                         <div class="price">₹120</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(12, 'Chicken Rice', './assets/Dinner/chicken rice.jpg', 120, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Diner/chicken_naan.html"> <img src="./assets/Dinner/easy-butter-chicken-naan.jpg"
-                                alt="Veg Biryani"></a>
+                        <a href="./HTML/Diner/chicken_naan.html"> <img
+                                src="./assets/Dinner/easy-butter-chicken-naan.jpg" alt="Veg Biryani"></a>
                     </div>
                     <div class="details-box">
                         <div class="heart-icon">Delicious butter chicken naan</div>
@@ -326,11 +347,13 @@
                         </p>
                         <div class="price">₹120</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(13, 'Butter chicken naan', './assets/Dinner/easy-butter-chicken-naan.jpg', 120, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Diner/parotta.html"><img src="./assets/Dinner/parotta.jpg" alt="Veg Biryani"></a>
+                        <a href="./HTML/Diner/parotta.html"><img src="./assets/Dinner/parotta.jpg"
+                                alt="Veg Biryani"></a>
                     </div>
                     <div class="details-box">
                         <div class="heart-icon">Delicious Parotta</div>
@@ -340,11 +363,12 @@
                         </p>
                         <div class="price">₹30</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(14, 'Parotta', './assets/Dinner/parotta.jpg', 30, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
                 <div class="food-card">
                     <div class="image-box">
-                        <a href="./HTML/Snacks/pani_puri.html"><img src="./assets/Snacks/pani puri.jpg"
+                        <a href="./HTML/Snacks/pani_puri.html"><img src="./assets/Snacks/pani%20puri.jpg"
                                 alt="Veg Biryani"></a>
                     </div>
                     <div class="details-box">
@@ -355,7 +379,8 @@
                         </p>
                         <div class="price">₹30</div>
                     </div>
-                    <a href="./HTML/addtocard.html"><button class="add-button">Add</button></a>
+                    <button class="add-button"
+                        onclick="addToCart(15, 'pani puri', './assets/Snacks/pani puri.jpg', 30, '★★★★☆ 4.6', 'Fragrant basmati rice cooked with fresh vegetables and aromatic spices.')">Add</button>
                 </div>
 
             </div>
@@ -365,27 +390,27 @@
                     <div class="footer-block">
                         <div class="footer-title logo">Local Eats</div>
                         <div class="footer-link-list">
-                            <a href="#">About Us</a>
-                            <a href="#">Careers</a>
-                            <a href="#">Partner with Us</a>
-                            <a href="#">Contact Us</a>
+                            <a href="./HTML/about.html#about">About Us</a>
+                            <a href="./HTML/about.html#careers">Careers</a>
+                            <a href="./HTML/about.html#partner">Partner with Us</a>
+                            <a href="./HTML/about.html#help">Contact Us</a>
                         </div>
                     </div>
 
                     <div class="footer-block">
                         <div class="footer-title">Help</div>
                         <div class="footer-link-list">
-                            <a href="#">Help & FAQs</a>
-                            <a href="#">Track Order</a>
-                            <a href="#">Report Issue</a>
+                            <a href="./HTML/about.html#help">Help & FAQs</a>
+                            <a href="./HTML/about.html#help">Track Order</a>
+                            <a href="./HTML/about.html#help">Report Issue</a>
                         </div>
                     </div>
 
                     <div class="footer-block">
                         <div class="footer-title">Legal</div>
                         <div class="footer-link-list">
-                            <a href="#">Terms & Conditions</a>
-                            <a href="#">Privacy Policy</a>
+                            <a href="./HTML/about.html#terms">Terms & Conditions</a>
+                            <a href="./HTML/about.html#privacy">Privacy Policy</a>
                         </div>
 
                         <div class="social-icons">
@@ -400,7 +425,41 @@
                     &copy; 2025 Local Eats. All rights reserved.
                 </div>
             </footer>
-
+        </div>
+    </div>
 </body>
+<!-- Location Modal -->
+<div id="locationModal" class="location-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Select Your Location</h3>
+            <span class="close-modal">&times;</span>
+        </div>
+        <div class="map-container" style="overflow-y: auto;">
+            <!-- Modal Location Search -->
+            <div class="modal-search"
+                style="width: 90%; max-width: 800px; margin-bottom: 15px; display: flex; gap: 10px;">
+                <input type="text" id="modalLocationSearch" placeholder="Search for area (e.g. Adyar, Chennai)"
+                    style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-dark); background: var(--surface-dark); color: white; outline: none;">
+                <button id="searchAreaBtn"
+                    style="padding: 10px 20px; background: var(--primary-orange); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold;">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div id="map">
+                <iframe id="mapFrame" src="https://maps.google.com/maps?q=Chennai&output=embed" width="100%"
+                    height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <button class="confirm-location-btn">Confirm Location</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/location-map.js"></script>
+<script src="js/cart-utils.js"></script>
+
 
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="../CSS/sign_up.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <div class="signup-container">
         <h1 class="app-title">Local Eats</h1>
         <p class="tagline">Sign up to explore the freshest local food.</p>
 
-        <form class="signup-form">
+        <form id="signupForm" class="signup-form">
             <div class="input-group">
                 <input type="text" id="username" placeholder="User name" required>
             </div>
@@ -24,10 +26,17 @@
             <button type="submit" class="signup-button">Sign up</button>
         </form>
 
+        <div id="message" class="message"></div>
+
         <div class="links-group">
             <a href="#" class="link-text">forgot password?</a>
-            <a href="#" class="link-text register-link">Register</a>
+            <a href="Login.html" class="link-text register-link">Login</a>
         </div>
     </div>
+
+    <script src="../js/signup.js"></script>
+
+
 </body>
+
 </html>

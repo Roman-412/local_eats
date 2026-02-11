@@ -1,15 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/filters.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/location-modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header class="navbar">
-        <div class="logo">Local Eats</div>
+        <a href="../index.html">
+            <div class="logo">Local Eats</div>
+        </a>
 
         <div class="location-input">
             <i class="fas fa-map-marker-alt"></i>
@@ -22,97 +27,214 @@
             <i class="fas fa-search"></i>
         </div>
         <div class="auth-btn">
-            <a href="./HTML/sign_up.html">SIGN UP</a>
+            <a href="sign_up.html">SIGN UP</a>
         </div>
         <div class="login">
-            <a href="./HTML/Login.html">LOGIN</a>
+            <a href="Login.html">LOGIN</a>
         </div>
     </header>
     <div class="filter-modal">
-    <div class="filter-header">
-        <h2>Filters</h2>
-        <span class="close-btn">&times;</span>
-    </div>
-    <div class="filter-body">
-        <div class="filter-sidebar">
-            <ul>
-                <li class="active">Sort by</li>
-                <li>Cuisines</li>
-                <li>Rating</li>
-                <li>Cost for two</li>
-                <li>More filters</li>
-            </ul>
+        <div class="filter-header">
+            <h2>Filters</h2>
+            <span class="close-btn">&times;</span>
         </div>
-        <div class="filter-content">
-            <div class="filter-section">
-                <label>
-                    <input type="radio" name="sort" checked>
-                    Popularity
-                </label>
-                <label>
-                    <input type="radio" name="sort">
-                    Rating: High to Low
-                </label>
-                <label>
-                    <input type="radio" name="sort">
-                    Cost: Low to High
-                </label>
-                <label>
-                    <input type="radio" name="sort">
-                    Cost: High to Low
-                </label>
-                <label>
-                    <input type="radio" name="sort">
-                    Distance
-                </label>
+        <div class="filter-body">
+            <div class="filter-sidebar">
+                <ul>
+                    <li class="active">Category</li>
+                    <li>Sort by</li>
+                    <li>Cuisines</li>
+                    <li>Rating</li>
+                    <li>Cost for two</li>
+                    <li>Distance</li>
+                    <li>More filters</li>
+                </ul>
+            </div>
+            <div class="filter-content">
+                <!-- Category section -->
+                <div class="filter-section" id="section-category">
+                    <label>
+                        <input type="radio" name="category" value="all" checked>
+                        All
+                    </label>
+                    <label>
+                        <input type="radio" name="category" value="veg">
+                        Veg
+                    </label>
+                    <label>
+                        <input type="radio" name="category" value="non-veg">
+                        Non-Veg
+                    </label>
+                </div>
+
+                <!-- Sort section -->
+                <div class="filter-section" id="section-sort" style="display: none;">
+                    <label>
+                        <input type="radio" name="sort" value="cost_30_80" checked>
+                        Cost: ₹30 - ₹80
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="cost_80_150">
+                        Cost: ₹80 - ₹150
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="rating_3.5_4">
+                        Rating: 3.5 - 4
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="rating_4_5">
+                        Rating: 4 - 5
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="rating_high">
+                        Rating: High to Low
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="price_high">
+                        Cost: High to Low
+                    </label>
+                </div>
+
+                <!-- Cost section (hidden by default) -->
+                <div class="filter-section" id="section-cost" style="display: none;">
+                    <label>
+                        <input type="radio" name="price-range" value="0-50">
+                        Under ₹50
+                    </label>
+                    <label>
+                        <input type="radio" name="price-range" value="50-100">
+                        ₹50 - ₹100
+                    </label>
+                    <label>
+                        <input type="radio" name="price-range" value="100-500">
+                        Above ₹100
+                    </label>
+                </div>
+
+                <!-- Rating section -->
+                <div class="filter-section" id="section-rating" style="display: none;">
+                    <label>
+                        <input type="radio" name="rating-range" value="4.5">
+                        4.5+ Stars
+                    </label>
+                    <label>
+                        <input type="radio" name="rating-range" value="4.0">
+                        4.0+ Stars
+                    </label>
+                    <label>
+                        <input type="radio" name="rating-range" value="3.5">
+                        3.5+ Stars
+                    </label>
+                    <label>
+                        <input type="radio" name="rating-range" value="3.0">
+                        3.0+ Stars
+                    </label>
+                </div>
+
+                <!-- Distance section -->
+                <div class="filter-section" id="section-distance" style="display: none;">
+                    <label>
+                        <input type="radio" name="distance-range" value="1">
+                        Within 1 km
+                    </label>
+                    <label>
+                        <input type="radio" name="distance-range" value="2">
+                        Within 2 km
+                    </label>
+                    <label>
+                        <input type="radio" name="distance-range" value="5">
+                        Within 5 km
+                    </label>
+                </div>
+
+                <!-- Cuisines section -->
+                <div class="filter-section" id="section-cuisines" style="display: none;">
+                    <label><input type="checkbox" name="cuisine" value="south_indian"> South Indian</label>
+                    <label><input type="checkbox" name="cuisine" value="north_indian"> North Indian</label>
+                    <label><input type="checkbox" name="cuisine" value="chinese"> Chinese</label>
+                    <label><input type="checkbox" name="cuisine" value="street_food"> Street Food</label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-footer">
+            <button class="clear-btn" id="clear-btn">Clear all</button>
+            <button class="apply-btn" id="apply-btn">Apply</button>
+        </div>
+    </div>
+    <!-- Location Modal -->
+    <div id="locationModal" class="location-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Your Location</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="map-container" style="overflow-y: auto;">
+                <!-- Modal Location Search -->
+                <div class="modal-search"
+                    style="width: 90%; max-width: 800px; margin-bottom: 15px; display: flex; gap: 10px;">
+                    <input type="text" id="modalLocationSearch" placeholder="Search for area (e.g. Adyar, Chennai)"
+                        style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-dark); background: var(--surface-dark); color: white; outline: none;">
+                    <button id="searchAreaBtn"
+                        style="padding: 10px 20px; background: var(--primary-orange); border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: bold;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div id="map">
+                    <iframe id="mapFrame" src="https://maps.google.com/maps?q=Chennai&output=embed" width="100%"
+                        height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <button class="confirm-location-btn">Confirm Location</button>
             </div>
         </div>
     </div>
-    <div class="filter-footer">
-        <button class="clear-btn">Clear all</button>
-        <a href="/HTML/Non_veg.html"><button class="apply-btn">Apply</button></a>
-    </div>
-</div>
+    <script src="../js/location-map.js"></script>
 </body>
- <footer class="main-footer">
-                <div class="footer-content-wrapper">
+<footer class="main-footer">
+    <div class="footer-content-wrapper">
 
-                    <div class="footer-block">
-                        <div class="footer-title logo">Local Eats</div>
-                        <div class="footer-link-list">
-                            <a href="#">About Us</a>
-                            <a href="#">Careers</a>
-                            <a href="#">Partner with Us</a>
-                            <a href="#">Contact Us</a>
-                        </div>
-                    </div>
+        <div class="footer-block">
+            <div class="footer-title logo">Local Eats</div>
+            <div class="footer-link-list">
+                <a href="about.html#about">About Us</a>
+                <a href="about.html#careers">Careers</a>
+                <a href="about.html#partner">Partner with Us</a>
+                <a href="about.html#help">Contact Us</a>
+            </div>
+        </div>
 
-                    <div class="footer-block">
-                        <div class="footer-title">Help</div>
-                        <div class="footer-link-list">
-                            <a href="#">Help & FAQs</a>
-                            <a href="#">Track Order</a>
-                            <a href="#">Report Issue</a>
-                        </div>
-                    </div>
+        <div class="footer-block">
+            <div class="footer-title">Help</div>
+            <div class="footer-link-list">
+                <a href="about.html#help">Help & FAQs</a>
+                <a href="about.html#help">Track Order</a>
+                <a href="about.html#help">Report Issue</a>
+            </div>
+        </div>
 
-                    <div class="footer-block">
-                        <div class="footer-title">Legal</div>
-                        <div class="footer-link-list">
-                            <a href="#">Terms & Conditions</a>
-                            <a href="#">Privacy Policy</a>
-                        </div>
+        <div class="footer-block">
+            <div class="footer-title">Legal</div>
+            <div class="footer-link-list">
+                <a href="about.html#terms">Terms & Conditions</a>
+                <a href="about.html#privacy">Privacy Policy</a>
+            </div>
 
-                        <div class="social-icons">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
 
-                <div class="footer-copyright">
-                    &copy; 2025 Local Eats. All rights reserved.
-                </div>
-            </footer>
+    <div class="footer-copyright">
+        &copy; 2025 Local Eats. All rights reserved.
+    </div>
+</footer>
+
+<script src="../js/auth.js"></script>
+<script src="../js/filters-logic.js"></script>
+
+
 </html>
