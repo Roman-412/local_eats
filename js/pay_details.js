@@ -16,7 +16,7 @@ async function loadOrderSummary() {
 
     if (!finalOrder && userId) {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/carts/user/${userId}`);
+            const response = await fetch(`https://backend-2h2s.onrender.com/carts/user/${userId}`);
             if (response.ok) {
                 const backendCart = await response.json();
                 if (backendCart.items && backendCart.items.length > 0) {
@@ -161,7 +161,7 @@ async function processPayment() {
             }))
         };
 
-        const response = await fetch("http://127.0.0.1:8000/orders/", {
+        const response = await fetch("https://backend-2h2s.onrender.com/orders/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderData)
@@ -175,7 +175,7 @@ async function processPayment() {
         const savedOrder = await response.json();
 
         try {
-            await fetch("http://127.0.0.1:8000/payments/", {
+            await fetch("https://backend-2h2s.onrender.com/payments/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -198,10 +198,10 @@ async function processPayment() {
 
         if (userId) {
             try {
-                let cartRes = await fetch(`http://127.0.0.1:8000/carts/user/${userId}`);
+                let cartRes = await fetch(`https://backend-2h2s.onrender.com/carts/user/${userId}`);
                 if (cartRes.ok) {
                     const cart = await cartRes.json();
-                    await fetch(`http://127.0.0.1:8000/carts/${cart.id}`, { method: 'DELETE' });
+                    await fetch(`https://backend-2h2s.onrender.com/carts/${cart.id}`, { method: 'DELETE' });
                 }
             } catch (e) { console.error(e); }
         }

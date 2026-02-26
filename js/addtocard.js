@@ -30,13 +30,13 @@ async function syncCartWithBackend() {
     if (cart.length === 0) return;
 
     try {
-        let response = await fetch(`http://127.0.0.1:8000/carts/user/${userId}`);
+        let response = await fetch(`https://backend-2h2s.onrender.com/carts/user/${userId}`);
         let backendCart;
 
         if (response.ok) {
             backendCart = await response.json();
         } else {
-            response = await fetch(`http://127.0.0.1:8000/carts/`, {
+            response = await fetch(`https://backend-2h2s.onrender.com/carts/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -66,7 +66,7 @@ async function syncCartWithBackend() {
         }
 
         for (const item of cart) {
-            const itemRes = await fetch(`http://127.0.0.1:8000/carts/${backendCart.id}/items`, {
+            const itemRes = await fetch(`https://backend-2h2s.onrender.com/carts/${backendCart.id}/items`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -96,7 +96,7 @@ async function loadCartFromBackend() {
     if (!userId) return;
 
     try {
-        const response = await fetch(`http://127.0.0.1:8000/carts/user/${userId}`);
+        const response = await fetch(`https://backend-2h2s.onrender.com/carts/user/${userId}`);
         if (response.ok) {
             const backendCart = await response.json();
             window.backendCartId = backendCart.id;
@@ -116,7 +116,7 @@ async function loadCartFromBackend() {
 async function updateBackendItemQuantity(itemId, quantity) {
     if (!window.backendCartId) return;
     try {
-        const res = await fetch(`http://127.0.0.1:8000/carts/${window.backendCartId}/items/${itemId}?quantity=${quantity}`, {
+        const res = await fetch(`https://backend-2h2s.onrender.com/carts/${window.backendCartId}/items/${itemId}?quantity=${quantity}`, {
             method: 'PUT'
         });
         if (!res.ok) {
@@ -133,7 +133,7 @@ async function updateBackendItemQuantity(itemId, quantity) {
 async function removeBackendItem(itemId) {
     if (!window.backendCartId) return;
     try {
-        await fetch(`http://127.0.0.1:8000/carts/${window.backendCartId}/items/${itemId}`, {
+        await fetch(`https://backend-2h2s.onrender.com/carts/${window.backendCartId}/items/${itemId}`, {
             method: 'DELETE'
         });
         await loadCartFromBackend();
@@ -274,7 +274,7 @@ window.clearCart = async function () {
     const userId = localStorage.getItem("user_id");
     if (userId && window.backendCartId) {
         try {
-            await fetch(`http://127.0.0.1:8000/carts/${window.backendCartId}`, { method: 'DELETE' });
+            await fetch(`https://backend-2h2s.onrender.com/carts/${window.backendCartId}`, { method: 'DELETE' });
             window.backendCartId = null;
             renderCart([]);
         } catch (e) { console.error(e); }
@@ -468,7 +468,7 @@ async function handlePlaceOrder(e) {
         btn.disabled = true;
 
         try {
-            const res = await fetch(`http://127.0.0.1:8000/carts/${window.backendCartId}`, {
+            const res = await fetch(`https://backend-2h2s.onrender.com/carts/${window.backendCartId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

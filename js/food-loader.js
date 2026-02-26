@@ -37,7 +37,7 @@ async function loadFoods() {
 
         queryString = queryString.replace(/[&?]$/, '');
 
-        const response = await fetch(`http://127.0.0.1:8000/foods${queryString}`);
+        const response = await fetch(`https://backend-2h2s.onrender.com/foods${queryString}`);
         const foods = await response.json();
 
         const menuContainer = document.getElementById('menu-container');

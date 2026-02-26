@@ -28,14 +28,14 @@ async function addToCart(id, title, image, price, rating, description) {
 
     if (userId) {
         try {
-            let response = await fetch(`http://127.0.0.1:8000/carts/user/${userId}`);
+            let response = await fetch(`https://backend-2h2s.onrender.com/carts/user/${userId}`);
             let cartId;
 
             if (response.ok) {
                 const cart = await response.json();
                 cartId = cart.id;
             } else {
-                const newCartRes = await fetch("http://127.0.0.1:8000/carts/", {
+                const newCartRes = await fetch("https://backend-2h2s.onrender.com/carts/", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -63,7 +63,7 @@ async function addToCart(id, title, image, price, rating, description) {
 
             if (!cartId) throw new Error("Failed to initialize cart");
 
-            const itemRes = await fetch(`http://127.0.0.1:8000/carts/${cartId}/items`, {
+            const itemRes = await fetch(`https://backend-2h2s.onrender.com/carts/${cartId}/items`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

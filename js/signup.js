@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/users/", {
+            const response = await fetch("https://backend-2h2s.onrender.com/users/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
